@@ -1,28 +1,32 @@
 import { Button } from "@/components/ui/button";
-import { Facebook, Twitter, Instagram, Linkedin, Music, Youtube, Mail, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Music, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <nav className="flex items-center gap-6">
-            <button 
-              onClick={() => scrollToSection('about')}
+            <Link 
+              to="/"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
+              Home
+            </Link>
+            <Link 
+              to="/about"
               className="text-sm font-medium hover:text-primary transition-colors"
             >
               About
-            </button>
+            </Link>
           </nav>
           
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
+            <span className="text-sm font-medium text-muted-foreground hidden sm:block">
+              Connect with Dr. Manyara
+            </span>
+            <div className="flex items-center gap-2">
             <a href="https://web.facebook.com/hon.antonymanyara/?_rdc=1&_rdr" target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="icon" className="h-8 w-8">
                 <Facebook className="h-4 w-4" />
@@ -53,6 +57,7 @@ const Header = () => {
                 <Youtube className="h-4 w-4" />
               </Button>
             </a>
+            </div>
           </div>
         </div>
       </div>

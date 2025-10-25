@@ -79,19 +79,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Dr. Manyara Section */}
-      <section id="about" className="border-t border-border py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-light mb-12 text-center">About Dr. Manyara</h2>
-            <p className="text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto">
-              Antony Manyara is a bold, visionary leader born and raised in Meru County, Kenya. His journey in leadership began early, growing from grassroots youth mobilizer to a respected voice in national and continental arenas. In 2018/2019, he made history as the inaugural Chairperson of the University of Nairobi Students Association (UNSA), formerly SONU. He currently serves as President of the Kenya University Students Organization (KUSO) since 2020, and of the East African Students Union (EASU), amplifying youth voices across the region. Globally, Manyara has represented Kenya with distinction—as a delegate to the Commonwealth Youth Council (2021/2022), Youth Ambassador for the Africa Progress Group (APG), Chairperson of the African Union Youth Association (AUYA) Security Council, and Board Director of the Commonwealth Students Association (CSA).
-              Since 2024, he has served as Kenya's Ambassador for Sustainable Housing under the Ministry of Housing, promoting inclusive urban development. He also leads Youth Advocacy Africa (YAA)—an NGO advancing quality education, climate action, architectural sustainability, legal reform, and health equity. His impact on national policy is profound. Through strategic litigation, parliamentary petitions, bill sponsorships, mass lobbying, and public mobilization, Manyara has catalyzed legislative change that continues to shape a better Kenya. A former youth league chair in two major political parties, he is now poised—backed by allies and ideals—to launch a transformative political party rooted in egalitarianism, civic empowerment, and the true aspirations of the Kenyan people. A tireless champion of the mwananchi, Antony Manyara believes in people over power, action over rhetoric, and a future where every Kenyan voice is not just heard—but heeded.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Book Launch Event Section */}
       <section className="border-t border-border py-20">
         <div className="container mx-auto px-4">
