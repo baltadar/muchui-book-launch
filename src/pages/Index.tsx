@@ -41,14 +41,14 @@ const Index = () => {
   ];
 
   const retailers = [
+    { name: "Amazon", url: "https://www.amazon.com/dp/B0FXN19LCF", logo: "https://placeholder-logo-url.com/amazon.png" },
+    { name: "Apple Books", url: "https://books.apple.com/us/book/the-other-side-how-to-build-resilience-and-own-your-story/id6754465844", logo: "https://placeholder-logo-url.com/apple.png" },
+    { name: "Kobo", url: "https://www.kobo.com/ww/en/ebook/the-other-side-how-to-build-resilience-and-own-your-story?sId=7aaef219-4390-4c6f-8e23-5656312b2a22&ssId=aYeKdWh1bPEgsuscrnPy0", logo: "https://placeholder-logo-url.com/kobo.png" },
     { name: "Smashwords", url: "https://www.smashwords.com/books/view/1886769", logo: "https://placeholder-logo-url.com/smashwords.png" },
     { name: "Everand", url: "https://www.everand.com/book/937800048/The-Other-Side-How-to-Build-Resilience-and-Own-Your-Story", logo: "https://placeholder-logo-url.com/everand.png" },
     { name: "Thalia", url: "https://www.thalia.de/shop/home/artikeldetails/A1077221817", logo: "https://placeholder-logo-url.com/thalia.png" },
     { name: "Vivlio", url: "https://shop.vivlio.com/product/9798232305710_9798232305710_10020/the-other-side-how-to-build-resilience-and-own-your-story", logo: "https://placeholder-logo-url.com/vivlio.png" },
-    { name: "Apple Books", url: "https://books.apple.com/us/book/the-other-side-how-to-build-resilience-and-own-your-story/id6754465844", logo: "https://placeholder-logo-url.com/apple.png" },
-    { name: "Kobo", url: "https://www.kobo.com/ww/en/ebook/the-other-side-how-to-build-resilience-and-own-your-story?sId=7aaef219-4390-4c6f-8e23-5656312b2a22&ssId=aYeKdWh1bPEgsuscrnPy0", logo: "https://placeholder-logo-url.com/kobo.png" },
     { name: "Fable", url: "https://fable.co/book/x-9798232305710", logo: "https://placeholder-logo-url.com/fable.png" },
-    { name: "Amazon", url: "https://www.amazon.com/dp/B0FXN19LCF", logo: "https://placeholder-logo-url.com/amazon.png" },
   ];
 
   return (
