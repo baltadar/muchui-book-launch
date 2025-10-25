@@ -1,9 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import bookCover from "@/assets/book-cover.png";
-import { BookOpen, Calendar, CreditCard, Heart, ExternalLink } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import bookCover from "@/assets/book-cover.jpg";
+import author1 from "@/assets/author-1.jpg";
+import author2 from "@/assets/author-2.jpg";
+import { useState } from "react";
 
 const Index = () => {
+  const [openPayment, setOpenPayment] = useState<string | null>(null);
+  const [openDonation, setOpenDonation] = useState<string | null>(null);
+
   const paymentMethods = [
     {
       title: "Bank Transfer",
@@ -49,84 +54,90 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-accent/5">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16 md:py-24">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-            Exciting News!
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Dr. Antony Manyara is set to release his inspiring new book, <span className="font-semibold italic text-foreground">The Other Side of Hard</span>, a personal transformation guide that helps readers build resilience, face life's challenges with clarity, and discover the strength within.
-          </p>
+      <section className="container mx-auto px-4 py-20 md:py-32">
+        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <div>
+            <h1 className="text-5xl md:text-7xl font-light mb-6 text-foreground tracking-tight">
+              The Other Side<br />of Hard
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground font-light mb-8 leading-relaxed">
+              How to Build Resilience and Own Your Story
+            </p>
+            <p className="text-base text-muted-foreground mb-4">Dr. Antony Muchui Manyara, HSC.</p>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <img 
+              src={bookCover} 
+              alt="The Other Side of Hard - Book Cover" 
+              className="rounded-sm shadow-lg col-span-2"
+            />
+            <img 
+              src={author1} 
+              alt="Dr. Antony Manyara" 
+              className="rounded-sm shadow-md"
+            />
+            <img 
+              src={author2} 
+              alt="Dr. Antony Manyara" 
+              className="rounded-sm shadow-md"
+            />
+          </div>
         </div>
-
-        <div className="flex justify-center mb-8">
-          <img 
-            src={bookCover} 
-            alt="The Other Side of Hard - Book Cover" 
-            className="rounded-lg shadow-2xl max-w-sm w-full hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-
-        <p className="text-center text-muted-foreground italic">
-          Click the cover to learn more about the book and join the launch.
-        </p>
       </section>
 
       {/* Book Launch Event Section */}
-      <section className="bg-primary/5 py-16">
+      <section className="border-t border-border py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <Calendar className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-bold text-center">Book Launch Event</h2>
-            </div>
+            <h2 className="text-4xl md:text-5xl font-light mb-4 text-center">Book Launch Event</h2>
+            <p className="text-center text-muted-foreground mb-12 text-lg">Join us for the launch celebration</p>
             
-            <Card className="mb-8">
-              <CardHeader>
-                <CardTitle className="text-2xl">Join Us for the Launch Celebration</CardTitle>
-                <CardDescription className="text-lg">Be part of this inspiring journey</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-primary">$300 USD</span>
-                  <span className="text-muted-foreground">per ticket</span>
-                </div>
-                <div className="bg-muted p-4 rounded-lg">
-                  <p className="font-semibold mb-1">Venue:</p>
-                  <p className="text-muted-foreground">To Be Announced</p>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="mb-12 text-center">
+              <div className="inline-block">
+                <div className="text-5xl font-light mb-2">$300</div>
+                <div className="text-sm text-muted-foreground">per ticket</div>
+                <div className="mt-4 text-sm text-muted-foreground">Venue: To Be Announced</div>
+              </div>
+            </div>
 
             {/* Payment Methods */}
             <div className="mb-8">
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <CreditCard className="w-6 h-6 text-primary" />
-                <h3 className="text-2xl font-bold text-center">How to Get Your Ticket</h3>
-              </div>
-              <p className="text-center text-muted-foreground mb-6">
-                Choose your preferred payment method below and secure your spot at the launch event
+              <h3 className="text-2xl font-light mb-6 text-center">How to Purchase</h3>
+              <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Send payment via your preferred method below, then email proof of payment to <a href="mailto:antony@yaafrika.org" className="underline">antony@yaafrika.org</a> to secure your ticket.
               </p>
               
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="space-y-3 max-w-2xl mx-auto">
                 {paymentMethods.map((method, index) => (
-                  <Card key={index} className="hover:shadow-lg transition-shadow">
-                    <CardHeader>
-                      <CardTitle className="text-lg">{method.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
+                  <Collapsible
+                    key={index}
+                    open={openPayment === method.title}
+                    onOpenChange={(open) => setOpenPayment(open ? method.title : null)}
+                  >
+                    <CollapsibleTrigger asChild>
+                      <Button 
+                        variant="outline" 
+                        className="w-full justify-between text-left font-normal hover:bg-accent"
+                      >
+                        <span>{method.title}</span>
+                        <span className="text-muted-foreground text-sm">
+                          {openPayment === method.title ? '−' : '+'}
+                        </span>
+                      </Button>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="mt-2 p-4 border border-border rounded-md bg-muted/30">
                       <dl className="space-y-2">
                         {method.details.map((detail, idx) => (
                           <div key={idx} className="flex flex-col sm:flex-row sm:justify-between gap-1">
-                            <dt className="font-medium text-sm text-muted-foreground">{detail.label}:</dt>
-                            <dd className="text-sm font-mono bg-muted px-2 py-1 rounded break-all">{detail.value}</dd>
+                            <dt className="text-sm text-muted-foreground">{detail.label}:</dt>
+                            <dd className="text-sm font-mono">{detail.value}</dd>
                           </div>
                         ))}
                       </dl>
-                    </CardContent>
-                  </Card>
+                    </CollapsibleContent>
+                  </Collapsible>
                 ))}
               </div>
             </div>
@@ -135,35 +146,43 @@ const Index = () => {
       </section>
 
       {/* Donate Section */}
-      <section className="py-16">
+      <section className="border-t border-border py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <Heart className="w-8 h-8 text-secondary" />
-              <h2 className="text-3xl md:text-4xl font-bold text-center">Donate to the Cause</h2>
-            </div>
-            
-            <p className="text-center text-muted-foreground mb-8 text-lg">
+            <h2 className="text-4xl md:text-5xl font-light mb-4 text-center">Donate to the Cause</h2>
+            <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
               Your generous support helps us reach more people with this message of resilience and hope
             </p>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="space-y-3 max-w-2xl mx-auto">
               {paymentMethods.map((method, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow border-secondary/20">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{method.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
+                <Collapsible
+                  key={index}
+                  open={openDonation === method.title}
+                  onOpenChange={(open) => setOpenDonation(open ? method.title : null)}
+                >
+                  <CollapsibleTrigger asChild>
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-between text-left font-normal hover:bg-accent"
+                    >
+                      <span>{method.title}</span>
+                      <span className="text-muted-foreground text-sm">
+                        {openDonation === method.title ? '−' : '+'}
+                      </span>
+                    </Button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-2 p-4 border border-border rounded-md bg-muted/30">
                     <dl className="space-y-2">
                       {method.details.map((detail, idx) => (
                         <div key={idx} className="flex flex-col sm:flex-row sm:justify-between gap-1">
-                          <dt className="font-medium text-sm text-muted-foreground">{detail.label}:</dt>
-                          <dd className="text-sm font-mono bg-muted px-2 py-1 rounded break-all">{detail.value}</dd>
+                          <dt className="text-sm text-muted-foreground">{detail.label}:</dt>
+                          <dd className="text-sm font-mono">{detail.value}</dd>
                         </div>
                       ))}
                     </dl>
-                  </CardContent>
-                </Card>
+                  </CollapsibleContent>
+                </Collapsible>
               ))}
             </div>
           </div>
@@ -171,40 +190,28 @@ const Index = () => {
       </section>
 
       {/* Purchase Book Section */}
-      <section className="bg-accent/5 py-16">
+      <section className="border-t border-border py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <BookOpen className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-bold text-center">Purchase the Book Online</h2>
-            </div>
-            
+            <h2 className="text-4xl md:text-5xl font-light mb-4 text-center">Purchase the Book</h2>
             <p className="text-center text-muted-foreground mb-12 text-lg">
               Available now on your favorite platforms
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
               {retailers.map((retailer, index) => (
                 <a
                   key={index}
                   href={retailer.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group"
                 >
-                  <Card className="h-full hover:shadow-xl hover:border-primary transition-all duration-300 cursor-pointer">
-                    <CardContent className="flex flex-col items-center justify-center p-6 h-full">
-                      <div className="w-full aspect-square bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg flex items-center justify-center mb-3 group-hover:from-primary/20 group-hover:to-accent/20 transition-all">
-                        <span className="text-2xl font-bold text-primary group-hover:scale-110 transition-transform">
-                          {retailer.name.charAt(0)}
-                        </span>
-                      </div>
-                      <p className="font-semibold text-center text-sm group-hover:text-primary transition-colors">
-                        {retailer.name}
-                      </p>
-                      <ExternalLink className="w-4 h-4 text-muted-foreground mt-2 group-hover:text-primary transition-colors" />
-                    </CardContent>
-                  </Card>
+                  <Button 
+                    variant="outline" 
+                    className="rounded-full px-6 hover:bg-primary hover:text-primary-foreground transition-colors"
+                  >
+                    {retailer.name}
+                  </Button>
                 </a>
               ))}
             </div>
@@ -213,9 +220,9 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary/10 py-8 mt-16">
+      <footer className="border-t border-border py-12 mt-20">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground">
+          <p className="text-sm text-muted-foreground">
             © 2025 Dr. Antony Muchui Manyara. All rights reserved.
           </p>
         </div>
