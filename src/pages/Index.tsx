@@ -266,6 +266,9 @@ const Index = () => {
                   <MapPin className="h-4 w-4" />
                   <span>iHiT Center, Dennis Pritt Road, Kilimani, Nairobi</span>
                 </div>
+                <a href="https://antonymanyara.org" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-foreground transition-colors justify-center">
+                  <span>Visit Main Website</span>
+                </a>
               </div>
             </div>
             
