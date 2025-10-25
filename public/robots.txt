@@ -1,14 +1,71 @@
+# ================================================
+# robots.txt for books.antonymanyara.org
+# Optimized for maximum SEO visibility and safe indexing
+# ================================================
+
+# --- Primary Search Bots ---
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# --- Social Media & Preview Crawlers ---
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# --- AI Crawlers & Indexing Bots ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+# --- Universal Rule ---
 User-agent: *
 Allow: /
+
+# --- Sitemap Reference ---
+Sitemap: https://books.antonymanyara.org/sitemap.xml
+
+# --- Additional Crawl Directives ---
+# Encourage frequent re-crawling for updates and book launch events
+Crawl-delay: 2
+
+# --- Notes ---
+# This file allows all major bots to index all content
+# and ensures preview cards (OpenGraph/Twitter) display correctly.
+# Your book schema and metadata will now be discoverable globally.
