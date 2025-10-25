@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import bookCover from "@/assets/book-cover.jpg";
-import author1 from "@/assets/author-1.jpg";
-import author2 from "@/assets/author-2.jpg";
 import { useState } from "react";
 
 const Index = () => {
@@ -43,21 +41,21 @@ const Index = () => {
   ];
 
   const retailers = [
-    { name: "Smashwords", url: "https://www.smashwords.com/books/view/1886769" },
-    { name: "Everand", url: "https://www.everand.com/book/937800048/The-Other-Side-How-to-Build-Resilience-and-Own-Your-Story" },
-    { name: "Thalia", url: "https://www.thalia.de/shop/home/artikeldetails/A1077221817" },
-    { name: "Vivlio", url: "https://shop.vivlio.com/product/9798232305710_9798232305710_10020/the-other-side-how-to-build-resilience-and-own-your-story" },
-    { name: "Apple Books", url: "https://books.apple.com/us/book/the-other-side-how-to-build-resilience-and-own-your-story/id6754465844" },
-    { name: "Kobo", url: "https://www.kobo.com/ww/en/ebook/the-other-side-how-to-build-resilience-and-own-your-story?sId=7aaef219-4390-4c6f-8e23-5656312b2a22&ssId=aYeKdWh1bPEgsuscrnPy0" },
-    { name: "Fable", url: "https://fable.co/book/x-9798232305710" },
-    { name: "Amazon", url: "https://www.amazon.com/dp/B0FXN19LCF" },
+    { name: "Smashwords", url: "https://www.smashwords.com/books/view/1886769", logo: "https://placeholder-logo-url.com/smashwords.png" },
+    { name: "Everand", url: "https://www.everand.com/book/937800048/The-Other-Side-How-to-Build-Resilience-and-Own-Your-Story", logo: "https://placeholder-logo-url.com/everand.png" },
+    { name: "Thalia", url: "https://www.thalia.de/shop/home/artikeldetails/A1077221817", logo: "https://placeholder-logo-url.com/thalia.png" },
+    { name: "Vivlio", url: "https://shop.vivlio.com/product/9798232305710_9798232305710_10020/the-other-side-how-to-build-resilience-and-own-your-story", logo: "https://placeholder-logo-url.com/vivlio.png" },
+    { name: "Apple Books", url: "https://books.apple.com/us/book/the-other-side-how-to-build-resilience-and-own-your-story/id6754465844", logo: "https://placeholder-logo-url.com/apple.png" },
+    { name: "Kobo", url: "https://www.kobo.com/ww/en/ebook/the-other-side-how-to-build-resilience-and-own-your-story?sId=7aaef219-4390-4c6f-8e23-5656312b2a22&ssId=aYeKdWh1bPEgsuscrnPy0", logo: "https://placeholder-logo-url.com/kobo.png" },
+    { name: "Fable", url: "https://fable.co/book/x-9798232305710", logo: "https://placeholder-logo-url.com/fable.png" },
+    { name: "Amazon", url: "https://www.amazon.com/dp/B0FXN19LCF", logo: "https://placeholder-logo-url.com/amazon.png" },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 md:py-32">
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
           <div>
             <h1 className="text-5xl md:text-7xl font-light mb-6 text-foreground tracking-tight">
               The Other Side<br />of Hard
@@ -67,21 +65,11 @@ const Index = () => {
             </p>
             <p className="text-base text-muted-foreground mb-4">Dr. Antony Muchui Manyara, HSC.</p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="flex justify-center">
             <img 
               src={bookCover} 
               alt="The Other Side of Hard - Book Cover" 
-              className="rounded-sm shadow-lg col-span-2"
-            />
-            <img 
-              src={author1} 
-              alt="Dr. Antony Manyara" 
-              className="rounded-sm shadow-md"
-            />
-            <img 
-              src={author2} 
-              alt="Dr. Antony Manyara" 
-              className="rounded-sm shadow-md"
+              className="rounded-sm shadow-lg max-w-md w-full"
             />
           </div>
         </div>
@@ -193,9 +181,9 @@ const Index = () => {
       <section className="border-t border-border py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-light mb-4 text-center">Purchase the Book</h2>
+            <h2 className="text-4xl md:text-5xl font-light mb-4 text-center">Purchase the Book Online</h2>
             <p className="text-center text-muted-foreground mb-12 text-lg">
-              Available now on your favorite platforms
+              Digital version available now on your favorite platforms
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
@@ -208,9 +196,17 @@ const Index = () => {
                 >
                   <Button 
                     variant="outline" 
-                    className="rounded-full px-6 hover:bg-primary hover:text-primary-foreground transition-colors"
+                    className="rounded-full px-6 hover:bg-primary hover:text-primary-foreground transition-colors flex items-center gap-2"
                   >
-                    {retailer.name}
+                    <img 
+                      src={retailer.logo} 
+                      alt={`${retailer.name} logo`}
+                      className="h-4 w-auto object-contain"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                    <span>{retailer.name}</span>
                   </Button>
                 </a>
               ))}
