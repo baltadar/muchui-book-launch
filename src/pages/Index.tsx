@@ -133,6 +133,44 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Purchase Book Section */}
+      <section className="border-t border-border py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-light mb-4 text-center">Purchase the Book Online</h2>
+            <p className="text-center text-muted-foreground mb-12 text-lg">
+              Digital version available now on your favorite platforms
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+              {retailers.map((retailer, index) => (
+                <a
+                  key={index}
+                  href={retailer.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button 
+                    variant="outline" 
+                    className="rounded-full px-6 hover:bg-primary hover:text-primary-foreground transition-colors flex items-center gap-2"
+                  >
+                    <img 
+                      src={retailer.logo} 
+                      alt={`${retailer.name} logo`}
+                      className="h-4 w-auto object-contain"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                    <span>{retailer.name}</span>
+                  </Button>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Donate Section */}
       <section className="border-t border-border py-20">
         <div className="container mx-auto px-4">
@@ -171,44 +209,6 @@ const Index = () => {
                     </dl>
                   </CollapsibleContent>
                 </Collapsible>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Purchase Book Section */}
-      <section className="border-t border-border py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-light mb-4 text-center">Purchase the Book Online</h2>
-            <p className="text-center text-muted-foreground mb-12 text-lg">
-              Digital version available now on your favorite platforms
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-              {retailers.map((retailer, index) => (
-                <a
-                  key={index}
-                  href={retailer.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button 
-                    variant="outline" 
-                    className="rounded-full px-6 hover:bg-primary hover:text-primary-foreground transition-colors flex items-center gap-2"
-                  >
-                    <img 
-                      src={retailer.logo} 
-                      alt={`${retailer.name} logo`}
-                      className="h-4 w-auto object-contain"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                      }}
-                    />
-                    <span>{retailer.name}</span>
-                  </Button>
-                </a>
               ))}
             </div>
           </div>
