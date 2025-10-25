@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="container mx-auto px-4 py-3 md:py-4">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
           <nav className="flex items-center gap-6">
             <Link 
               to="/"

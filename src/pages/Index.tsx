@@ -58,46 +58,46 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 md:py-32">
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+      <section className="container mx-auto px-4 py-12 md:py-24">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-5xl mx-auto">
           <div>
-            <h1 className="text-5xl md:text-7xl font-light mb-6 text-foreground tracking-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light mb-4 md:mb-6 text-foreground tracking-tight">
               The Other Side<br />of Hard
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground font-light mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground font-light mb-4 md:mb-6 leading-relaxed">
               How to Build Resilience and Own Your Story
             </p>
-            <p className="text-base text-muted-foreground mb-4">Dr. Antony Muchui Manyara, HSC.</p>
+            <p className="text-sm md:text-base text-muted-foreground">Dr. Antony Muchui Manyara, HSC.</p>
           </div>
           <div className="flex justify-center">
             <img 
               src={bookCover} 
               alt="The Other Side of Hard - Book Cover" 
-              className="rounded-sm shadow-lg max-w-xs w-full"
+              className="rounded-sm shadow-lg max-w-[280px] md:max-w-xs w-full"
             />
           </div>
         </div>
       </section>
 
       {/* Book Launch Event Section */}
-      <section className="border-t border-border py-20">
+      <section className="border-t border-border py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-light mb-4 text-center">Book Launch Event</h2>
-            <p className="text-center text-muted-foreground mb-12 text-lg">Join us for the launch celebration</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3 text-center">Book Launch Event</h2>
+            <p className="text-center text-muted-foreground mb-8 text-base md:text-lg">Join us for the launch celebration</p>
             
-            <div className="mb-12 text-center">
+            <div className="mb-8 text-center">
               <div className="inline-block">
-                <div className="text-5xl font-light mb-2">$300</div>
+                <div className="text-4xl md:text-5xl font-light mb-2">$300</div>
                 <div className="text-sm text-muted-foreground">per ticket</div>
-                <div className="mt-4 text-sm text-muted-foreground">Venue: To Be Announced</div>
+                <div className="mt-3 text-sm text-muted-foreground">Venue: To Be Announced</div>
               </div>
             </div>
 
             {/* Payment Methods */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-light mb-6 text-center">How to Purchase</h3>
-              <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <div className="mb-6">
+              <h3 className="text-xl md:text-2xl font-light mb-4 text-center">How to Purchase</h3>
+              <p className="text-center text-muted-foreground mb-6 text-sm md:text-base max-w-2xl mx-auto">
                 Send payment via your preferred method below, then email proof of payment to <a href="mailto:antony@yaafrika.org" className="underline">antony@yaafrika.org</a> to secure your ticket.
               </p>
               
@@ -138,11 +138,11 @@ const Index = () => {
       </section>
 
       {/* Purchase Book Section */}
-      <section className="border-t border-border py-20">
+      <section className="border-t border-border py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-light mb-4 text-center">Purchase the Book Online</h2>
-            <p className="text-center text-muted-foreground mb-12 text-lg">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3 text-center">Purchase the Book Online</h2>
+            <p className="text-center text-muted-foreground mb-8 text-base md:text-lg">
               Digital version available now on your favorite platforms
             </p>
 
@@ -176,11 +176,11 @@ const Index = () => {
       </section>
 
       {/* Donate Section */}
-      <section className="border-t border-border py-20">
+      <section className="border-t border-border py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-light mb-4 text-center">Donate to the Cause</h2>
-            <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3 text-center">Donate to the Cause</h2>
+            <p className="text-center text-muted-foreground mb-8 text-base md:text-lg max-w-2xl mx-auto">
               Your generous support helps us reach more people with this message of resilience and hope
             </p>
 
@@ -220,10 +220,10 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-12 mt-20">
+      <footer className="border-t border-border py-8 md:py-10 mt-12 md:mt-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col items-center gap-6 mb-8">
+            <div className="flex flex-col items-center gap-4 md:gap-6 mb-6 md:mb-8">
               <div className="flex items-center gap-2">
                 <a href="https://web.facebook.com/hon.antonymanyara/?_rdc=1&_rdr" target="_blank" rel="noopener noreferrer">
                   <Button variant="ghost" size="icon" className="h-8 w-8">

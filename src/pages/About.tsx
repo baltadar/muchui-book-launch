@@ -7,11 +7,11 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <section className="container mx-auto px-4 py-20 md:py-32">
+      <section className="container mx-auto px-4 py-12 md:py-24">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-light mb-12 text-center">About Dr. Manyara</h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-light mb-8 md:mb-10 text-center">About Dr. Manyara</h1>
           
-          <div className="text-muted-foreground leading-relaxed space-y-6 max-w-3xl mx-auto">
+          <div className="text-muted-foreground leading-relaxed space-y-4 md:space-y-5 max-w-3xl mx-auto text-sm md:text-base">
             <p>
               Antony Manyara is a bold, visionary leader born and raised in Meru County, Kenya. His journey in leadership began early, growing from grassroots youth mobilizer to a respected voice in national and continental arenas. In 2018/2019, he made history as the inaugural Chairperson of the University of Nairobi Students Association (UNSA), formerly SONU.
             </p>
@@ -36,10 +36,10 @@ const About = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-12 mt-20">
+      <footer className="border-t border-border py-8 md:py-10 mt-12 md:mt-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col items-center gap-6 mb-8">
+            <div className="flex flex-col items-center gap-4 md:gap-6 mb-6 md:mb-8">
               <div className="flex items-center gap-2">
                 <a href="https://web.facebook.com/hon.antonymanyara/?_rdc=1&_rdr" target="_blank" rel="noopener noreferrer">
                   <Button variant="ghost" size="icon" className="h-8 w-8">
