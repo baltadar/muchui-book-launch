@@ -51,6 +51,7 @@ const Index = () => {
     { name: "Thalia", url: "https://www.thalia.de/shop/home/artikeldetails/A1077221817", logo: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1761404551/Thalia_logo_rqnlct.svg" },
     { name: "Vivlio", url: "https://shop.vivlio.com/product/9798232305710_9798232305710_10020/the-other-side-how-to-build-resilience-and-own-your-story", logo: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1761404820/vivlio_logo_svz1gn.webp" },
     { name: "Fable", url: "https://fable.co/book/x-9798232305710", logo: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1761404712/fable_logo_uvv6t2.jpg" },
+    { name: "Goodreads", url: "https://www.goodreads.com/book/show/243155695-the-other-side-of-hard?from_search=true&from_srp=true&qid=5HjfY2aJbm&rank=4", logo: "https://res.cloudinary.com/dbgcwdes6/image/upload/v1761459543/goodreads_logo_oua4a8.png" },
   ];
 
   return (
@@ -171,6 +172,10 @@ const Index = () => {
                 </a>
               ))}
             </div>
+            
+            <p className="text-center text-xs text-muted-foreground mt-6">
+              If you enjoyed the book, please leave a review. Thank you!
+            </p>
           </div>
         </div>
       </section>
