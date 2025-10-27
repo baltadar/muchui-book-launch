@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Facebook, Twitter, Instagram, Linkedin, Music, Youtube } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Music, Youtube, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -25,8 +25,14 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3 md:py-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
           {daysRemaining > 0 && (
-            <div className="text-xs md:text-sm text-muted-foreground">
-              <span className="font-semibold text-primary">{daysRemaining}</span> days until book launch
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 animate-fade-in">
+              <Calendar className="h-4 w-4 text-primary animate-pulse" />
+              <span className="text-sm md:text-base font-bold text-primary">
+                {daysRemaining}
+              </span>
+              <span className="text-xs md:text-sm font-medium">
+                days until book launch! 🎉
+              </span>
             </div>
           )}
           <nav className="flex items-center gap-6">
