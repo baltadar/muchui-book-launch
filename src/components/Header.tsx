@@ -1,12 +1,34 @@
 import { Button } from "@/components/ui/button";
 import { Facebook, Twitter, Instagram, Linkedin, Music, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Header = () => {
+  const [daysRemaining, setDaysRemaining] = useState(0);
+
+  useEffect(() => {
+    const calculateDays = () => {
+      const launchDate = new Date('2025-12-05');
+      const today = new Date();
+      const diffTime = launchDate.getTime() - today.getTime();
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      setDaysRemaining(diffDays > 0 ? diffDays : 0);
+    };
+
+    calculateDays();
+    const interval = setInterval(calculateDays, 1000 * 60 * 60); // Update every hour
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
       <div className="container mx-auto px-4 py-3 md:py-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
+          {daysRemaining > 0 && (
+            <div className="text-xs md:text-sm text-muted-foreground">
+              <span className="font-semibold text-primary">{daysRemaining}</span> days until book launch
+            </div>
+          )}
           <nav className="flex items-center gap-6">
             <Link 
               to="/"
