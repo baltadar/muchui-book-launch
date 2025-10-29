@@ -12,7 +12,7 @@ const Index = () => {
   const [openDonation, setOpenDonation] = useState<string | null>(null);
   const [copies, setCopies] = useState<number>(1);
   
-  const pricePerCopy = 1200; // KES
+  const pricePerCopy = 2500; // KES
   const totalPrice = copies * pricePerCopy;
   
   const handlePreOrder = () => {
