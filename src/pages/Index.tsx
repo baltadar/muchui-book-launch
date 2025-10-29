@@ -154,7 +154,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-light mb-3">Pre-order My Book: The Other Side of Hard</h2>
+              <h2 className="text-3xl md:text-4xl font-light mb-3">Pre-Order a Physical Copy of "The Other Side of Hard" Now</h2>
               <p className="text-muted-foreground text-base md:text-lg">
                 Secure your physical copy today and be among the first to receive it
               </p>
@@ -169,17 +169,17 @@ const Index = () => {
                     id="copies"
                     type="number"
                     min="1"
-                    max="10"
+                    max="5000"
                     value={copies}
                     onChange={(e) => {
                       const value = parseInt(e.target.value);
-                      if (value >= 1 && value <= 10) {
+                      if (value >= 1 && value <= 5000) {
                         setCopies(value);
                       }
                     }}
                     className="text-lg h-12 transition-all duration-200"
                   />
-                  <p className="text-xs text-muted-foreground">Maximum 10 copies per order</p>
+                  <p className="text-xs text-muted-foreground">Maximum 5,000 copies per order</p>
                 </div>
 
                 {/* Live Price Display */}
@@ -200,10 +200,10 @@ const Index = () => {
                 {/* Pre-order Button */}
                 <Button 
                   onClick={handlePreOrder}
-                  className="w-full h-12 text-base font-medium transition-all duration-200 hover:scale-[1.02]"
+                  className="w-full h-14 text-lg font-bold transition-all duration-200 hover:scale-[1.02] bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg hover:shadow-xl"
                   size="lg"
                 >
-                  <ShoppingCart className="mr-2 h-5 w-5" />
+                  <ShoppingCart className="mr-2 h-6 w-6" />
                   Pre-order Now
                 </Button>
 
