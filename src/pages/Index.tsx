@@ -1,13 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import bookCover from "@/assets/book-cover.jpg";
 import { useState } from "react";
-import { Facebook, Twitter, Instagram, Linkedin, Music, Youtube, Mail, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Music, Youtube, Mail, MapPin, ShoppingCart } from "lucide-react";
 import Header from "@/components/Header";
 
 const Index = () => {
   const [openPayment, setOpenPayment] = useState<string | null>(null);
   const [openDonation, setOpenDonation] = useState<string | null>(null);
+  const [copies, setCopies] = useState<number>(1);
+  
+  const pricePerCopy = 1200; // KES
+  const totalPrice = copies * pricePerCopy;
+  
+  const handlePreOrder = () => {
+    // Redirect to Paystack with the total amount
+    window.open(`https://paystack.com/pay/theothersideofhard?amount=${totalPrice * 100}`, '_blank');
+  };
 
   const paymentMethods = [
     {
@@ -132,6 +143,74 @@ const Index = () => {
                     </CollapsibleContent>
                   </Collapsible>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pre-order Physical Copies Section */}
+      <section className="border-t border-border py-12 md:py-16 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-light mb-3">Pre-order My Book: The Other Side of Hard</h2>
+              <p className="text-muted-foreground text-base md:text-lg">
+                Secure your physical copy today and be among the first to receive it
+              </p>
+            </div>
+
+            <div className="bg-background border border-border rounded-lg p-6 md:p-8 shadow-sm">
+              <div className="space-y-6">
+                {/* Number of Copies Input */}
+                <div className="space-y-2">
+                  <Label htmlFor="copies" className="text-base">Number of Copies</Label>
+                  <Input
+                    id="copies"
+                    type="number"
+                    min="1"
+                    max="10"
+                    value={copies}
+                    onChange={(e) => {
+                      const value = parseInt(e.target.value);
+                      if (value >= 1 && value <= 10) {
+                        setCopies(value);
+                      }
+                    }}
+                    className="text-lg h-12 transition-all duration-200"
+                  />
+                  <p className="text-xs text-muted-foreground">Maximum 10 copies per order</p>
+                </div>
+
+                {/* Live Price Display */}
+                <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 transition-all duration-300">
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted-foreground">Total Amount:</span>
+                    <div className="text-right">
+                      <div className="text-3xl font-bold text-primary">
+                        KES {totalPrice.toLocaleString()}
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        {copies} {copies === 1 ? 'copy' : 'copies'} × KES {pricePerCopy.toLocaleString()}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Pre-order Button */}
+                <Button 
+                  onClick={handlePreOrder}
+                  className="w-full h-12 text-base font-medium transition-all duration-200 hover:scale-[1.02]"
+                  size="lg"
+                >
+                  <ShoppingCart className="mr-2 h-5 w-5" />
+                  Pre-order Now
+                </Button>
+
+                {/* Receipt Note */}
+                <p className="text-center text-xs text-muted-foreground mt-4">
+                  You'll receive an instant digital receipt from Paystack after payment.
+                </p>
               </div>
             </div>
           </div>
