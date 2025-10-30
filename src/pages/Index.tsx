@@ -154,8 +154,8 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-light mb-3">Pre-Order a Physical Copy of "The Other Side of Hard" Now</h2>
-              <p className="text-muted-foreground text-base md:text-lg">
+              <h2 className="text-2xl md:text-3xl font-playfair font-semibold mb-3 italic">Pre-Order a Physical Copy of "The Other Side of Hard" Now</h2>
+              <p className="text-muted-foreground text-sm md:text-base">
                 Secure your physical copy today and be among the first to receive it
               </p>
             </div>
