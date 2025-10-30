@@ -48,6 +48,12 @@ const Header = () => {
             >
               About
             </Link>
+            <a 
+              href="#pre-order"
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
+              Buy
+            </a>
           </nav>
           
           <div className="flex items-center gap-4">
