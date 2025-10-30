@@ -16,8 +16,8 @@ const Index = () => {
   const totalPrice = copies * pricePerCopy;
   
   const handlePreOrder = () => {
-    // Redirect to Paystack with the total amount
-    window.open(`https://paystack.com/pay/theothersideofhard?amount=${totalPrice * 100}`, '_blank');
+    // Redirect to Google Form
+    window.open('https://forms.gle/AoCbN9ix858342TK6', '_blank');
   };
 
   const paymentMethods = [
@@ -206,11 +206,6 @@ const Index = () => {
                   <ShoppingCart className="mr-2 h-6 w-6" />
                   Pre-order Now
                 </Button>
-
-                {/* Receipt Note */}
-                <p className="text-center text-xs text-muted-foreground mt-4">
-                  You'll receive an instant digital receipt from Paystack after payment.
-                </p>
               </div>
             </div>
           </div>
