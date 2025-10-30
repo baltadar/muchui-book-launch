@@ -17,7 +17,7 @@ const Index = () => {
   
   const handlePreOrder = () => {
     // Redirect to Google Form
-    window.open('https://forms.gle/AoCbN9ix858342TK6', '_blank');
+    window.location.href = 'https://forms.gle/AoCbN9ix858342TK6';
   };
 
   const paymentMethods = [
