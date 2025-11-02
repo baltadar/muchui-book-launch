@@ -10,12 +10,14 @@ import Header from "@/components/Header";
 const Index = () => {
   const [openPayment, setOpenPayment] = useState<string | null>(null);
   const [openDonation, setOpenDonation] = useState<string | null>(null);
-  const [copies, setCopies] = useState<number>(1);
-  const [deluxeCopies, setDeluxeCopies] = useState<number>(1);
+  const [copiesInput, setCopiesInput] = useState<string>("1");
+  const [deluxeCopiesInput, setDeluxeCopiesInput] = useState<string>("1");
   
   const pricePerCopy = 2500; // KES
+  const copies = Number.isNaN(parseInt(copiesInput, 10)) ? 0 : parseInt(copiesInput, 10);
   const totalPrice = copies * pricePerCopy;
   const deluxePricePerCopy = 5000; // KES
+  const deluxeCopies = Number.isNaN(parseInt(deluxeCopiesInput, 10)) ? 0 : parseInt(deluxeCopiesInput, 10);
   const deluxeTotalPrice = deluxeCopies * deluxePricePerCopy;
   
   const handlePreOrder = () => {
@@ -179,11 +181,21 @@ const Index = () => {
                     min="1"
                     max="5000"
                     step="1"
-                    value={copies}
+                    value={copiesInput}
                     onChange={(e) => {
-                      const value = parseInt(e.target.value);
-                      if (value >= 1 && value <= 5000) {
-                        setCopies(value);
+                      const v = e.target.value;
+                      if (v === "" || /^\d{0,4}$/.test(v)) {
+                        setCopiesInput(v);
+                      }
+                    }}
+                    onBlur={(e) => {
+                      const n = parseInt(e.target.value, 10);
+                      if (Number.isNaN(n) || n < 1) {
+                        setCopiesInput("1");
+                      } else if (n > 5000) {
+                        setCopiesInput("5000");
+                      } else {
+                        setCopiesInput(String(n));
                       }
                     }}
                     className="text-lg h-12 transition-all duration-200"
@@ -243,11 +255,21 @@ const Index = () => {
                     min="1"
                     max="5000"
                     step="1"
-                    value={deluxeCopies}
+                    value={deluxeCopiesInput}
                     onChange={(e) => {
-                      const value = parseInt(e.target.value);
-                      if (value >= 1 && value <= 5000) {
-                        setDeluxeCopies(value);
+                      const v = e.target.value;
+                      if (v === "" || /^\d{0,4}$/.test(v)) {
+                        setDeluxeCopiesInput(v);
+                      }
+                    }}
+                    onBlur={(e) => {
+                      const n = parseInt(e.target.value, 10);
+                      if (Number.isNaN(n) || n < 1) {
+                        setDeluxeCopiesInput("1");
+                      } else if (n > 5000) {
+                        setDeluxeCopiesInput("5000");
+                      } else {
+                        setDeluxeCopiesInput(String(n));
                       }
                     }}
                     className="text-lg h-12 transition-all duration-200"
