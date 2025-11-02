@@ -11,12 +11,20 @@ const Index = () => {
   const [openPayment, setOpenPayment] = useState<string | null>(null);
   const [openDonation, setOpenDonation] = useState<string | null>(null);
   const [copies, setCopies] = useState<number>(1);
+  const [deluxeCopies, setDeluxeCopies] = useState<number>(1);
   
   const pricePerCopy = 2500; // KES
   const totalPrice = copies * pricePerCopy;
+  const deluxePricePerCopy = 5000; // KES
+  const deluxeTotalPrice = deluxeCopies * deluxePricePerCopy;
   
   const handlePreOrder = () => {
     // Redirect to Google Form
+    window.location.href = 'https://forms.gle/AoCbN9ix858342TK6';
+  };
+
+  const handleDeluxePreOrder = () => {
+    // Redirect to Google Form for deluxe edition
     window.location.href = 'https://forms.gle/AoCbN9ix858342TK6';
   };
 
@@ -170,6 +178,7 @@ const Index = () => {
                     type="number"
                     min="1"
                     max="5000"
+                    step="1"
                     value={copies}
                     onChange={(e) => {
                       const value = parseInt(e.target.value);
@@ -205,6 +214,70 @@ const Index = () => {
                 >
                   <ShoppingCart className="mr-2 h-6 w-6" />
                   Pre-order Now
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deluxe Edition Section */}
+      <section className="border-t border-border py-12 md:py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-xl md:text-2xl font-playfair font-semibold mb-3 italic text-primary">Pre-Order the Deluxe Edition</h2>
+              <p className="text-muted-foreground text-sm md:text-base">
+                Premium hardcover edition with special features and exclusive content
+              </p>
+            </div>
+
+            <div className="bg-background border border-border rounded-lg p-6 md:p-8 shadow-sm">
+              <div className="space-y-6">
+                {/* Number of Copies Input */}
+                <div className="space-y-2">
+                  <Label htmlFor="deluxe-copies" className="text-base">Number of Copies</Label>
+                  <Input
+                    id="deluxe-copies"
+                    type="number"
+                    min="1"
+                    max="5000"
+                    step="1"
+                    value={deluxeCopies}
+                    onChange={(e) => {
+                      const value = parseInt(e.target.value);
+                      if (value >= 1 && value <= 5000) {
+                        setDeluxeCopies(value);
+                      }
+                    }}
+                    className="text-lg h-12 transition-all duration-200"
+                  />
+                  <p className="text-xs text-muted-foreground">Maximum 5,000 copies per order</p>
+                </div>
+
+                {/* Live Price Display */}
+                <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 transition-all duration-300">
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted-foreground">Total Amount:</span>
+                    <div className="text-right">
+                      <div className="text-3xl font-bold text-primary">
+                        KES {deluxeTotalPrice.toLocaleString()}
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        {deluxeCopies} {deluxeCopies === 1 ? 'copy' : 'copies'} × KES {deluxePricePerCopy.toLocaleString()}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Pre-order Button */}
+                <Button 
+                  onClick={handleDeluxePreOrder}
+                  className="w-full h-14 text-lg font-bold transition-all duration-200 hover:scale-[1.02] bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg hover:shadow-xl"
+                  size="lg"
+                >
+                  <ShoppingCart className="mr-2 h-6 w-6" />
+                  Pre-order Deluxe Edition
                 </Button>
               </div>
             </div>
