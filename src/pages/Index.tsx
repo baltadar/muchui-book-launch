@@ -27,7 +27,7 @@ const Index = () => {
 
   const handleDeluxePreOrder = () => {
     // Redirect to Google Form for deluxe edition
-    window.location.href = 'https://forms.gle/AoCbN9ix858342TK6';
+    window.location.href = 'https://forms.gle/dQi4Biufx58AzVMh8';
   };
 
   const paymentMethods = [
