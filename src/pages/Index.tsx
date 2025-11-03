@@ -239,16 +239,9 @@ const Index = () => {
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-xl md:text-2xl font-playfair font-semibold mb-3 italic text-primary">Pre-Order the Deluxe Edition</h2>
-              <p className="text-muted-foreground text-sm md:text-base mb-4">
-                This collector's edition has the following special features:
+              <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
+                This collector's edition features a pre-signed copy by the author, embossed hardcover binding, premium paper, larger trim size, and is individually numbered.
               </p>
-              <ul className="text-muted-foreground text-sm md:text-base space-y-1 max-w-md mx-auto text-left">
-                <li>• Pre-signed by the Author</li>
-                <li>• Embossed handover binding</li>
-                <li>• Premium paper</li>
-                <li>• Larger trim size</li>
-                <li>• Numbered Copy</li>
-              </ul>
             </div>
 
             <div className="bg-background border border-border rounded-lg p-6 md:p-8 shadow-sm">
