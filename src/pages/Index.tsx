@@ -3,6 +3,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import bookCover from "@/assets/book-cover.jpg";
+import deluxeBooks from "@/assets/deluxe-books.jpg";
 import { useState } from "react";
 import { Facebook, Twitter, Instagram, Linkedin, Music, Youtube, Mail, MapPin, ShoppingCart } from "lucide-react";
 import Header from "@/components/Header";
@@ -236,7 +237,7 @@ const Index = () => {
       {/* Deluxe Edition Section */}
       <section className="border-t border-border py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-xl md:text-2xl font-playfair font-semibold mb-3 italic text-primary">Pre-Order the Deluxe Edition</h2>
               <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
@@ -244,63 +245,75 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="bg-background border border-border rounded-lg p-6 md:p-8 shadow-sm">
-              <div className="space-y-6">
-                {/* Number of Copies Input */}
-                <div className="space-y-2">
-                  <Label htmlFor="deluxe-copies" className="text-base">Number of Copies</Label>
-                  <Input
-                    id="deluxe-copies"
-                    type="number"
-                    min="1"
-                    max="5000"
-                    step="1"
-                    value={deluxeCopiesInput}
-                    onChange={(e) => {
-                      const v = e.target.value;
-                      if (v === "" || /^\d{0,4}$/.test(v)) {
-                        setDeluxeCopiesInput(v);
-                      }
-                    }}
-                    onBlur={(e) => {
-                      const n = parseInt(e.target.value, 10);
-                      if (Number.isNaN(n) || n < 1) {
-                        setDeluxeCopiesInput("1");
-                      } else if (n > 5000) {
-                        setDeluxeCopiesInput("5000");
-                      } else {
-                        setDeluxeCopiesInput(String(n));
-                      }
-                    }}
-                    className="text-lg h-12 transition-all duration-200"
-                  />
-                  <p className="text-xs text-muted-foreground">Maximum 5,000 copies per order</p>
-                </div>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="flex justify-center order-2 md:order-1">
+                <img 
+                  src={deluxeBooks} 
+                  alt="The Other Side of Hard - Deluxe Edition" 
+                  className="rounded-lg shadow-lg w-full max-w-md"
+                />
+              </div>
 
-                {/* Live Price Display */}
-                <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 transition-all duration-300">
-                  <div className="flex items-center justify-between">
-                    <span className="text-muted-foreground">Total Amount:</span>
-                    <div className="text-right">
-                      <div className="text-3xl font-bold text-primary">
-                        KES {deluxeTotalPrice.toLocaleString()}
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        {deluxeCopies} {deluxeCopies === 1 ? 'copy' : 'copies'} × KES {deluxePricePerCopy.toLocaleString()}
+              <div className="order-1 md:order-2">
+                <div className="bg-background border border-border rounded-lg p-6 md:p-8 shadow-sm">
+                  <div className="space-y-6">
+                    {/* Number of Copies Input */}
+                    <div className="space-y-2">
+                      <Label htmlFor="deluxe-copies" className="text-base">Number of Copies</Label>
+                      <Input
+                        id="deluxe-copies"
+                        type="number"
+                        min="1"
+                        max="5000"
+                        step="1"
+                        value={deluxeCopiesInput}
+                        onChange={(e) => {
+                          const v = e.target.value;
+                          if (v === "" || /^\d{0,4}$/.test(v)) {
+                            setDeluxeCopiesInput(v);
+                          }
+                        }}
+                        onBlur={(e) => {
+                          const n = parseInt(e.target.value, 10);
+                          if (Number.isNaN(n) || n < 1) {
+                            setDeluxeCopiesInput("1");
+                          } else if (n > 5000) {
+                            setDeluxeCopiesInput("5000");
+                          } else {
+                            setDeluxeCopiesInput(String(n));
+                          }
+                        }}
+                        className="text-lg h-12 transition-all duration-200"
+                      />
+                      <p className="text-xs text-muted-foreground">Maximum 5,000 copies per order</p>
+                    </div>
+
+                    {/* Live Price Display */}
+                    <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 transition-all duration-300">
+                      <div className="flex items-center justify-between">
+                        <span className="text-muted-foreground">Total Amount:</span>
+                        <div className="text-right">
+                          <div className="text-3xl font-bold text-primary">
+                            KES {deluxeTotalPrice.toLocaleString()}
+                          </div>
+                          <div className="text-xs text-muted-foreground">
+                            {deluxeCopies} {deluxeCopies === 1 ? 'copy' : 'copies'} × KES {deluxePricePerCopy.toLocaleString()}
+                          </div>
+                        </div>
                       </div>
                     </div>
+
+                    {/* Pre-order Button */}
+                    <Button 
+                      onClick={handleDeluxePreOrder}
+                      className="w-full h-14 text-lg font-bold transition-all duration-200 hover:scale-[1.02] bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg hover:shadow-xl"
+                      size="lg"
+                    >
+                      <ShoppingCart className="mr-2 h-6 w-6" />
+                      Pre-order Deluxe Edition
+                    </Button>
                   </div>
                 </div>
-
-                {/* Pre-order Button */}
-                <Button 
-                  onClick={handleDeluxePreOrder}
-                  className="w-full h-14 text-lg font-bold transition-all duration-200 hover:scale-[1.02] bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg hover:shadow-xl"
-                  size="lg"
-                >
-                  <ShoppingCart className="mr-2 h-6 w-6" />
-                  Pre-order Deluxe Edition
-                </Button>
               </div>
             </div>
           </div>
@@ -357,6 +370,14 @@ const Index = () => {
             <p className="text-center text-muted-foreground mb-8 text-base md:text-lg max-w-2xl mx-auto">
               Your generous support helps us reach more people with this message of resilience and hope
             </p>
+            
+            {/* Book Highly Recommended For Section */}
+            <div className="mb-12 text-center">
+              <h3 className="text-xl md:text-2xl font-light mb-4">Book Highly Recommended For</h3>
+              <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+                Self help guide, Motivational handbook, High school students, University Students, and Goal-oriented people
+              </p>
+            </div>
 
             <div className="space-y-3 max-w-2xl mx-auto">
               {paymentMethods.map((method, index) => (
