@@ -370,14 +370,6 @@ const Index = () => {
             <p className="text-center text-muted-foreground mb-8 text-base md:text-lg max-w-2xl mx-auto">
               Your generous support helps us reach more people with this message of resilience and hope
             </p>
-            
-            {/* Book Highly Recommended For Section */}
-            <div className="mb-12 text-center">
-              <h3 className="text-xl md:text-2xl font-light mb-4">Book Highly Recommended For</h3>
-              <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-                Self help guide, Motivational handbook, High school students, University Students, and Goal-oriented people
-              </p>
-            </div>
 
             <div className="space-y-3 max-w-2xl mx-auto">
               {paymentMethods.map((method, index) => (
@@ -409,6 +401,14 @@ const Index = () => {
                   </CollapsibleContent>
                 </Collapsible>
               ))}
+            </div>
+
+            {/* Book Highly Recommended For Section */}
+            <div className="mt-12 text-center">
+              <h3 className="text-xl md:text-2xl font-light mb-4">Book Highly Recommended For</h3>
+              <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+                Self help guide, Motivational handbook, High school students, University Students, and Goal-oriented people
+              </p>
             </div>
           </div>
         </div>
