@@ -407,7 +407,7 @@ const Index = () => {
             <div className="mt-12 text-center">
               <h3 className="text-xl md:text-2xl font-light mb-4">Book Highly Recommended For</h3>
               <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-                Self help guide, Motivational handbook, High school students, University Students, and Goal-oriented people
+                This book is an essential read for anyone seeking personal growth and motivation. It serves as a practical self-help guide and motivational handbook, ideal for high school students, university students, and goal-oriented individuals who are determined to achieve success and maximize their potential.
               </p>
             </div>
           </div>
