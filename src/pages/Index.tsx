@@ -102,60 +102,28 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Book Launch Event Section */}
+      {/* Book Your Spot Section */}
       <section className="border-t border-border py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3 text-center">Book Launch Event</h2>
-            <p className="text-center text-muted-foreground mb-8 text-base md:text-lg">Join us for the launch celebration on December 5th 2025</p>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3">Book Your Spot</h2>
+            <p className="text-muted-foreground mb-6 text-base md:text-lg">Join us for the launch celebration on December 5th 2025</p>
             
-            <div className="mb-8 text-center">
+            <div className="mb-8">
               <div className="inline-block">
-                <div className="text-4xl md:text-5xl font-light mb-2">$300</div>
-                <div className="text-sm text-muted-foreground">per ticket</div>
+                <div className="text-4xl md:text-5xl font-light mb-2">FREE</div>
+                <div className="text-sm text-muted-foreground">Registration Required</div>
                 <div className="mt-3 text-sm text-muted-foreground">Venue: To Be Announced</div>
               </div>
             </div>
 
-            {/* Payment Methods */}
-            <div className="mb-6">
-              <h3 className="text-xl md:text-2xl font-light mb-4 text-center">How to Purchase</h3>
-              <p className="text-center text-muted-foreground mb-6 text-sm md:text-base max-w-2xl mx-auto">
-                Send payment via your preferred method below, then email proof of payment to <a href="mailto:antony@yaafrika.org" className="underline">antony@yaafrika.org</a> to secure your ticket.
-              </p>
-              
-              <div className="space-y-3 max-w-2xl mx-auto">
-                {paymentMethods.map((method, index) => (
-                  <Collapsible
-                    key={index}
-                    open={openPayment === method.title}
-                    onOpenChange={(open) => setOpenPayment(open ? method.title : null)}
-                  >
-                    <CollapsibleTrigger asChild>
-                      <Button 
-                        variant="outline" 
-                        className="w-full justify-between text-left font-normal hover:bg-accent"
-                      >
-                        <span>{method.title}</span>
-                        <span className="text-muted-foreground text-sm">
-                          {openPayment === method.title ? '−' : '+'}
-                        </span>
-                      </Button>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="mt-2 p-4 border border-border rounded-md bg-muted/30">
-                      <dl className="space-y-2">
-                        {method.details.map((detail, idx) => (
-                          <div key={idx} className="flex flex-col sm:flex-row sm:justify-between gap-1">
-                            <dt className="text-sm text-muted-foreground">{detail.label}:</dt>
-                            <dd className="text-sm font-mono">{detail.value}</dd>
-                          </div>
-                        ))}
-                      </dl>
-                    </CollapsibleContent>
-                  </Collapsible>
-                ))}
-              </div>
-            </div>
+            <Button 
+              size="lg" 
+              className="text-base md:text-lg px-8 py-6"
+              onClick={() => window.open('https://www.eventbrite.com/e/dr-antony-manyara-book-launch-tickets-1974981218991?aff=oddtdtcreator', '_blank')}
+            >
+              Register Now
+            </Button>
           </div>
         </div>
       </section>
