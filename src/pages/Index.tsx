@@ -113,7 +113,7 @@ const Index = () => {
               <div className="inline-block">
                 <div className="text-4xl md:text-5xl font-light mb-2">FREE</div>
                 <div className="text-sm text-muted-foreground">Registration Required</div>
-                <div className="mt-3 text-sm text-muted-foreground">Venue: To Be Announced</div>
+                <div className="mt-3 text-sm text-muted-foreground">Venue: University of Nairobi - Manu Chandaria Auditorium</div>
               </div>
             </div>
 
@@ -209,7 +209,7 @@ const Index = () => {
             <div className="text-center mb-8">
               <h2 className="text-xl md:text-2xl font-playfair font-semibold mb-3 italic text-primary">Pre-Order the Deluxe Edition</h2>
               <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
-                This collector's edition features a pre-signed copy by the author, embossed hardcover binding, premium paper, larger trim size, and is individually numbered.
+                This collector's edition features a pre-signed copy by the author, embossed hardcover binding with gold foiling, premium paper, larger trim size, and is individually numbered.
               </p>
             </div>
 
