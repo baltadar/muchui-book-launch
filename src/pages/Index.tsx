@@ -7,12 +7,15 @@ import deluxeBooks from "@/assets/deluxe-books.jpg";
 import { useState } from "react";
 import { Facebook, Twitter, Instagram, Linkedin, Music, Youtube, Mail, MapPin, ShoppingCart } from "lucide-react";
 import Header from "@/components/Header";
+import CheckoutDialog from "@/components/CheckoutDialog";
 
 const Index = () => {
   const [openPayment, setOpenPayment] = useState<string | null>(null);
   const [openDonation, setOpenDonation] = useState<string | null>(null);
   const [copiesInput, setCopiesInput] = useState<string>("1");
   const [deluxeCopiesInput, setDeluxeCopiesInput] = useState<string>("1");
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const [checkoutOrderType, setCheckoutOrderType] = useState<"standard" | "deluxe">("standard");
   
   const pricePerCopy = 2500; // KES
   const copies = Number.isNaN(parseInt(copiesInput, 10)) ? 0 : parseInt(copiesInput, 10);
@@ -22,13 +25,13 @@ const Index = () => {
   const deluxeTotalPrice = deluxeCopies * deluxePricePerCopy;
   
   const handlePreOrder = () => {
-    // Redirect to Google Form
-    window.location.href = 'https://forms.gle/AoCbN9ix858342TK6';
+    setCheckoutOrderType("standard");
+    setCheckoutOpen(true);
   };
 
   const handleDeluxePreOrder = () => {
-    // Redirect to Google Form for deluxe edition
-    window.location.href = 'https://forms.gle/dQi4Biufx58AzVMh8';
+    setCheckoutOrderType("deluxe");
+    setCheckoutOpen(true);
   };
 
   const paymentMethods = [
@@ -440,6 +443,15 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Checkout Dialog */}
+      <CheckoutDialog
+        open={checkoutOpen}
+        onOpenChange={setCheckoutOpen}
+        orderType={checkoutOrderType}
+        copies={checkoutOrderType === "deluxe" ? deluxeCopies : copies}
+        totalPrice={checkoutOrderType === "deluxe" ? deluxeTotalPrice : totalPrice}
+      />
     </div>
   );
 };
