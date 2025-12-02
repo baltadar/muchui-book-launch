@@ -1,1 +1,10 @@
 project_id = "jegewwsggtjecblxgnqw"
+
+[functions.pesapal-create-order]
+verify_jwt = false
+
+[functions.pesapal-ipn]
+verify_jwt = false
+
+[functions.pesapal-get-status]
+verify_jwt = false
