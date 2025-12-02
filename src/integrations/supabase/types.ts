@@ -14,7 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      orders: {
+        Row: {
+          amount: number
+          copies: number
+          created_at: string
+          currency: string
+          email: string
+          first_name: string
+          id: string
+          last_name: string
+          merchant_reference: string
+          order_type: string
+          pesapal_payment_method: string | null
+          pesapal_payment_status: string | null
+          pesapal_tracking_id: string | null
+          phone: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          amount: number
+          copies: number
+          created_at?: string
+          currency?: string
+          email: string
+          first_name: string
+          id?: string
+          last_name: string
+          merchant_reference: string
+          order_type: string
+          pesapal_payment_method?: string | null
+          pesapal_payment_status?: string | null
+          pesapal_tracking_id?: string | null
+          phone?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          amount?: number
+          copies?: number
+          created_at?: string
+          currency?: string
+          email?: string
+          first_name?: string
+          id?: string
+          last_name?: string
+          merchant_reference?: string
+          order_type?: string
+          pesapal_payment_method?: string | null
+          pesapal_payment_status?: string | null
+          pesapal_tracking_id?: string | null
+          phone?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
