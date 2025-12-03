@@ -12,7 +12,7 @@ const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
 
 // Use sandbox for testing, change to production when going live
-const IS_LIVE = false;
+const IS_LIVE = true;
 const PESAPAL_BASE_URL = IS_LIVE 
   ? "https://pay.pesapal.com/v3" 
   : "https://cybqa.pesapal.com/pesapalv3";

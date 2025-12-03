@@ -122,9 +122,9 @@ const PaymentCallback = () => {
     
     switch (order.status) {
       case "completed":
-        return `Thank you for your order, ${order.firstName}! Your pre-order of ${order.copies} ${order.orderType === "deluxe" ? "Deluxe Edition" : ""} ${order.copies === 1 ? "copy" : "copies"} has been confirmed. You will receive a confirmation email at ${order.email}.`;
+        return `Thank you for your order, ${order.firstName}! Your pre-order of ${order.copies} ${order.orderType === "deluxe" ? "Deluxe Edition" : ""} ${order.copies === 1 ? "copy" : "copies"} has been confirmed. We will contact you to provide delivery details. For any questions, please email info@yaafrika.org`;
       case "failed":
-        return "Unfortunately, your payment could not be processed. Please try again or contact support if the problem persists.";
+        return "Unfortunately, your payment could not be processed. Please try again or contact info@yaafrika.org if the problem persists.";
       case "cancelled":
         return "Your payment was cancelled. If this was a mistake, you can try ordering again.";
       default:
