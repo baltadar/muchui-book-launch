@@ -127,7 +127,11 @@ async function submitOrder(
   console.log("Order submission response:", JSON.stringify(data));
   
   if (data.error || !data.redirect_url) {
-    throw new Error(data.message || "Failed to submit order");
+    // Provide more specific error messages
+    if (data.error?.code === "amount_exceeds_default_limit") {
+      throw new Error("Payment system limit reached. Please contact info@yaafrika.org for assistance.");
+    }
+    throw new Error(data.error?.message || data.message || "Failed to submit order");
   }
   
   return data.redirect_url;
