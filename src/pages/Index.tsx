@@ -111,22 +111,25 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-xl md:text-2xl font-playfair font-semibold mb-3 italic text-primary">Pre-Order a Physical Copy of "The Other Side of Hard" Now</h2>
+              <h2 className="text-xl md:text-2xl font-playfair font-semibold mb-3 italic text-primary">Order a Physical Copy of "The Other Side of Hard" Now</h2>
               <p className="text-muted-foreground text-sm md:text-base">
-                Secure your physical copy today and be among the first to receive it
+                Secure your physical copy today
               </p>
             </div>
 
             <div className="bg-background border border-border rounded-lg p-6 md:p-8 shadow-sm text-center">
-              <p className="text-muted-foreground mb-4">Click below to pre-order your copy</p>
-              <iframe 
-                width="200" 
-                height="40" 
-                src="https://store.pesapal.com/embed-code?pageUrl=https://store.pesapal.com/theothersideofhardpurchase" 
-                frameBorder="0" 
-                allowFullScreen
-                title="Pre-order The Other Side of Hard"
-              />
+              <div className="text-2xl font-light mb-2">KES 2,500</div>
+              <p className="text-muted-foreground mb-4">Click below to order your copy</p>
+              <div className="flex justify-center">
+                <iframe 
+                  width="200" 
+                  height="40" 
+                  src="https://store.pesapal.com/embed-code?pageUrl=https://store.pesapal.com/theothersideofhardpurchase" 
+                  frameBorder="0" 
+                  allowFullScreen
+                  title="Order The Other Side of Hard"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -137,7 +140,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-xl md:text-2xl font-playfair font-semibold mb-3 italic text-primary">Pre-Order the Deluxe Edition</h2>
+              <h2 className="text-xl md:text-2xl font-playfair font-semibold mb-3 italic text-primary">Order the Deluxe Edition</h2>
               <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
                 This collector's edition features a pre-signed copy by the author, embossed hardcover binding with gold foiling, premium paper, larger trim size, and is individually numbered.
               </p>
@@ -154,15 +157,18 @@ const Index = () => {
 
               <div className="order-1 md:order-2">
                 <div className="bg-background border border-border rounded-lg p-6 md:p-8 shadow-sm text-center">
-                  <p className="text-muted-foreground mb-4">Click below to pre-order the Deluxe Edition</p>
-                  <iframe 
-                    width="200" 
-                    height="40" 
-                    src="https://store.pesapal.com/embed-code?pageUrl=https://store.pesapal.com/theothersideofhardpurchase" 
-                    frameBorder="0" 
-                    allowFullScreen
-                    title="Pre-order Deluxe Edition"
-                  />
+                  <div className="text-2xl font-light mb-2">KES 5,000</div>
+                  <p className="text-muted-foreground mb-4">Click below to order the Deluxe Edition</p>
+                  <div className="flex justify-center">
+                    <iframe 
+                      width="200" 
+                      height="40" 
+                      src="https://store.pesapal.com/embed-code?pageUrl=https://store.pesapal.com/theothersideofhardpurchase" 
+                      frameBorder="0" 
+                      allowFullScreen
+                      title="Order Deluxe Edition"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
