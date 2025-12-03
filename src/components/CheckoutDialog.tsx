@@ -43,6 +43,10 @@ const CheckoutDialog = ({ open, onOpenChange, orderType, copies, totalPrice }: C
       toast({ title: "Error", description: "Please enter a valid email address", variant: "destructive" });
       return false;
     }
+    if (!formData.phone.trim() || !/^\+?[0-9\s-]{10,}$/.test(formData.phone.trim())) {
+      toast({ title: "Error", description: "Please enter a valid phone number", variant: "destructive" });
+      return false;
+    }
     return true;
   };
 
@@ -153,7 +157,7 @@ const CheckoutDialog = ({ open, onOpenChange, orderType, copies, totalPrice }: C
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="phone">Phone Number (Optional)</Label>
+            <Label htmlFor="phone">Phone Number *</Label>
             <Input
               id="phone"
               name="phone"
@@ -162,6 +166,7 @@ const CheckoutDialog = ({ open, onOpenChange, orderType, copies, totalPrice }: C
               onChange={handleInputChange}
               placeholder="+254 7XX XXX XXX"
               disabled={isLoading}
+              required
             />
           </div>
 
