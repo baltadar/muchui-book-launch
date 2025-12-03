@@ -1,38 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import bookCover from "@/assets/book-cover.jpg";
 import deluxeBooks from "@/assets/deluxe-books.jpg";
 import { useState } from "react";
-import { Facebook, Twitter, Instagram, Linkedin, Music, Youtube, Mail, MapPin, ShoppingCart } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Music, Youtube, Mail, MapPin } from "lucide-react";
 import Header from "@/components/Header";
-import CheckoutDialog from "@/components/CheckoutDialog";
 
 const Index = () => {
-  const [openPayment, setOpenPayment] = useState<string | null>(null);
   const [openDonation, setOpenDonation] = useState<string | null>(null);
-  const [copiesInput, setCopiesInput] = useState<string>("1");
-  const [deluxeCopiesInput, setDeluxeCopiesInput] = useState<string>("1");
-  const [checkoutOpen, setCheckoutOpen] = useState(false);
-  const [checkoutOrderType, setCheckoutOrderType] = useState<"standard" | "deluxe">("standard");
-  
-  const pricePerCopy = 2500; // KES
-  const copies = Number.isNaN(parseInt(copiesInput, 10)) ? 0 : parseInt(copiesInput, 10);
-  const totalPrice = copies * pricePerCopy;
-  const deluxePricePerCopy = 5000; // KES
-  const deluxeCopies = Number.isNaN(parseInt(deluxeCopiesInput, 10)) ? 0 : parseInt(deluxeCopiesInput, 10);
-  const deluxeTotalPrice = deluxeCopies * deluxePricePerCopy;
-  
-  const handlePreOrder = () => {
-    setCheckoutOrderType("standard");
-    setCheckoutOpen(true);
-  };
-
-  const handleDeluxePreOrder = () => {
-    setCheckoutOrderType("deluxe");
-    setCheckoutOpen(true);
-  };
 
   const paymentMethods = [
     {
@@ -142,64 +117,16 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="bg-background border border-border rounded-lg p-6 md:p-8 shadow-sm">
-              <div className="space-y-6">
-                {/* Number of Copies Input */}
-                <div className="space-y-2">
-                  <Label htmlFor="copies" className="text-base">Number of Copies</Label>
-                  <Input
-                    id="copies"
-                    type="number"
-                    min="1"
-                    max="5000"
-                    step="1"
-                    value={copiesInput}
-                    onChange={(e) => {
-                      const v = e.target.value;
-                      if (v === "" || /^\d{0,4}$/.test(v)) {
-                        setCopiesInput(v);
-                      }
-                    }}
-                    onBlur={(e) => {
-                      const n = parseInt(e.target.value, 10);
-                      if (Number.isNaN(n) || n < 1) {
-                        setCopiesInput("1");
-                      } else if (n > 5000) {
-                        setCopiesInput("5000");
-                      } else {
-                        setCopiesInput(String(n));
-                      }
-                    }}
-                    className="text-lg h-12 transition-all duration-200"
-                  />
-                  <p className="text-xs text-muted-foreground">Maximum 5,000 copies per order</p>
-                </div>
-
-                {/* Live Price Display */}
-                <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 transition-all duration-300">
-                  <div className="flex items-center justify-between">
-                    <span className="text-muted-foreground">Total Amount:</span>
-                    <div className="text-right">
-                      <div className="text-3xl font-bold text-primary">
-                        KES {totalPrice.toLocaleString()}
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        {copies} {copies === 1 ? 'copy' : 'copies'} × KES {pricePerCopy.toLocaleString()}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Pre-order Button */}
-                <Button 
-                  onClick={handlePreOrder}
-                  className="w-full h-14 text-lg font-bold transition-all duration-200 hover:scale-[1.02] bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg hover:shadow-xl"
-                  size="lg"
-                >
-                  <ShoppingCart className="mr-2 h-6 w-6" />
-                  Pre-order Now
-                </Button>
-              </div>
+            <div className="bg-background border border-border rounded-lg p-6 md:p-8 shadow-sm text-center">
+              <p className="text-muted-foreground mb-4">Click below to pre-order your copy</p>
+              <iframe 
+                width="200" 
+                height="40" 
+                src="https://store.pesapal.com/embed-code?pageUrl=https://store.pesapal.com/theothersideofhardpurchase" 
+                frameBorder="0" 
+                allowFullScreen
+                title="Pre-order The Other Side of Hard"
+              />
             </div>
           </div>
         </div>
@@ -226,64 +153,16 @@ const Index = () => {
               </div>
 
               <div className="order-1 md:order-2">
-                <div className="bg-background border border-border rounded-lg p-6 md:p-8 shadow-sm">
-                  <div className="space-y-6">
-                    {/* Number of Copies Input */}
-                    <div className="space-y-2">
-                      <Label htmlFor="deluxe-copies" className="text-base">Number of Copies</Label>
-                      <Input
-                        id="deluxe-copies"
-                        type="number"
-                        min="1"
-                        max="5000"
-                        step="1"
-                        value={deluxeCopiesInput}
-                        onChange={(e) => {
-                          const v = e.target.value;
-                          if (v === "" || /^\d{0,4}$/.test(v)) {
-                            setDeluxeCopiesInput(v);
-                          }
-                        }}
-                        onBlur={(e) => {
-                          const n = parseInt(e.target.value, 10);
-                          if (Number.isNaN(n) || n < 1) {
-                            setDeluxeCopiesInput("1");
-                          } else if (n > 5000) {
-                            setDeluxeCopiesInput("5000");
-                          } else {
-                            setDeluxeCopiesInput(String(n));
-                          }
-                        }}
-                        className="text-lg h-12 transition-all duration-200"
-                      />
-                      <p className="text-xs text-muted-foreground">Maximum 5,000 copies per order</p>
-                    </div>
-
-                    {/* Live Price Display */}
-                    <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 transition-all duration-300">
-                      <div className="flex items-center justify-between">
-                        <span className="text-muted-foreground">Total Amount:</span>
-                        <div className="text-right">
-                          <div className="text-3xl font-bold text-primary">
-                            KES {deluxeTotalPrice.toLocaleString()}
-                          </div>
-                          <div className="text-xs text-muted-foreground">
-                            {deluxeCopies} {deluxeCopies === 1 ? 'copy' : 'copies'} × KES {deluxePricePerCopy.toLocaleString()}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Pre-order Button */}
-                    <Button 
-                      onClick={handleDeluxePreOrder}
-                      className="w-full h-14 text-lg font-bold transition-all duration-200 hover:scale-[1.02] bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg hover:shadow-xl"
-                      size="lg"
-                    >
-                      <ShoppingCart className="mr-2 h-6 w-6" />
-                      Pre-order Deluxe Edition
-                    </Button>
-                  </div>
+                <div className="bg-background border border-border rounded-lg p-6 md:p-8 shadow-sm text-center">
+                  <p className="text-muted-foreground mb-4">Click below to pre-order the Deluxe Edition</p>
+                  <iframe 
+                    width="200" 
+                    height="40" 
+                    src="https://store.pesapal.com/embed-code?pageUrl=https://store.pesapal.com/theothersideofhardpurchase" 
+                    frameBorder="0" 
+                    allowFullScreen
+                    title="Pre-order Deluxe Edition"
+                  />
                 </div>
               </div>
             </div>
@@ -444,14 +323,6 @@ const Index = () => {
         </div>
       </footer>
 
-      {/* Checkout Dialog */}
-      <CheckoutDialog
-        open={checkoutOpen}
-        onOpenChange={setCheckoutOpen}
-        orderType={checkoutOrderType}
-        copies={checkoutOrderType === "deluxe" ? deluxeCopies : copies}
-        totalPrice={checkoutOrderType === "deluxe" ? deluxeTotalPrice : totalPrice}
-      />
     </div>
   );
 };
