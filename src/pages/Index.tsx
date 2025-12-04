@@ -121,14 +121,12 @@ const Index = () => {
               <div className="text-2xl font-light mb-2">KES 2,500</div>
               <p className="text-muted-foreground mb-4">Click below to order your copy</p>
               <div className="flex justify-center">
-                <iframe 
-                  width="200" 
-                  height="40" 
-                  src="https://store.pesapal.com/embed-code?pageUrl=https://store.pesapal.com/theothersideofhardpurchase" 
-                  frameBorder="0" 
-                  allowFullScreen
-                  title="Order The Other Side of Hard"
-                />
+                <Button 
+                  size="lg"
+                  onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScolHl5ia46wU67RU_-o7ytcat_fX0R_im9UOd2q6OzOBzg_g/viewform', '_blank')}
+                >
+                  Order Now
+                </Button>
               </div>
             </div>
           </div>
@@ -160,14 +158,12 @@ const Index = () => {
                   <div className="text-2xl font-light mb-2">KES 5,000</div>
                   <p className="text-muted-foreground mb-4">Click below to order the Deluxe Edition</p>
                   <div className="flex justify-center">
-                    <iframe 
-                      width="200" 
-                      height="40" 
-                      src="https://store.pesapal.com/embed-code?pageUrl=https://store.pesapal.com/theothersideofhardpurchase" 
-                      frameBorder="0" 
-                      allowFullScreen
-                      title="Order Deluxe Edition"
-                    />
+                    <Button 
+                      size="lg"
+                      onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdTDiKqU2qrgqyCpKryYbOpJIjbvZtUTXNlM-41qPGV71UF2g/viewform', '_blank')}
+                    >
+                      Order Deluxe
+                    </Button>
                   </div>
                 </div>
               </div>
