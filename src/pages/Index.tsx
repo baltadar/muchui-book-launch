@@ -86,7 +86,7 @@ const Index = () => {
       <section className="border-t border-border py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3">Now Available</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3">Now Available in Bookshops</h2>
             <p className="text-muted-foreground mb-8 text-base md:text-lg">Get your copy at your favourite bookstores</p>
             
             <div className="flex justify-center items-center gap-8 md:gap-12">
