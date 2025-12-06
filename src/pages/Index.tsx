@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import bookCover from "@/assets/book-cover.jpg";
 import deluxeBooks from "@/assets/deluxe-books.jpg";
+import nuriaLogo from "@/assets/nuria-logo.jpeg";
+import textbookCenterLogo from "@/assets/textbook-center-logo.jpg";
 import { useState } from "react";
 import { Facebook, Twitter, Instagram, Linkedin, Music, Youtube, Mail, MapPin } from "lucide-react";
 import Header from "@/components/Header";
@@ -80,28 +82,39 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Book Your Spot Section */}
+      {/* Available at Bookstores Section */}
       <section className="border-t border-border py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3">Book Your Spot</h2>
-            <p className="text-muted-foreground mb-6 text-base md:text-lg">Join us for the launch celebration on December 5th 2025</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3">Now Available</h2>
+            <p className="text-muted-foreground mb-8 text-base md:text-lg">Get your copy at your favourite bookstores</p>
             
-            <div className="mb-8">
-              <div className="inline-block">
-                <div className="text-4xl md:text-5xl font-light mb-2">FREE</div>
-                <div className="text-sm text-muted-foreground">Registration Required</div>
-                <div className="mt-3 text-sm text-muted-foreground">Venue: University of Nairobi - Manu Chandaria Auditorium</div>
-              </div>
+            <div className="flex justify-center items-center gap-8 md:gap-12">
+              <a 
+                href="https://nuriakenya.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="transition-transform hover:scale-105"
+              >
+                <img 
+                  src={nuriaLogo} 
+                  alt="Nuria Kenya" 
+                  className="h-16 md:h-20 w-auto object-contain"
+                />
+              </a>
+              <a 
+                href="https://textbookcentre.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="transition-transform hover:scale-105"
+              >
+                <img 
+                  src={textbookCenterLogo} 
+                  alt="Text Book Centre" 
+                  className="h-16 md:h-20 w-auto object-contain"
+                />
+              </a>
             </div>
-
-            <Button 
-              size="lg" 
-              className="text-base md:text-lg px-8 py-6"
-              onClick={() => window.open('https://www.eventbrite.com/e/dr-antony-manyara-book-launch-tickets-1974981218991?aff=oddtdtcreator', '_blank')}
-            >
-              Register Now
-            </Button>
           </div>
         </div>
       </section>
