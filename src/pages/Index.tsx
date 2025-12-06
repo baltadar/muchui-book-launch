@@ -189,7 +189,7 @@ const Index = () => {
       <section className="border-t border-border py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3 text-center">Purchase the Book Online</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3 text-center">Purchase Soft Copy Worldwide</h2>
             <p className="text-center text-muted-foreground mb-8 text-base md:text-lg">
               Digital version available now on your favorite platforms
             </p>
