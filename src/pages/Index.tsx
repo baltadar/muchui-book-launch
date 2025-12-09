@@ -60,9 +60,18 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+
+      {/* Bestseller Badge */}
+      <div className="container mx-auto px-4 pt-6 flex justify-center">
+        <img 
+          src={bestsellerBadge} 
+          alt="Nairobi Bestseller Badge" 
+          className="w-20 h-20 md:w-24 md:h-24 drop-shadow-lg"
+        />
+      </div>
       
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12 md:py-24">
+      <section className="container mx-auto px-4 py-8 md:py-16">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-5xl mx-auto">
           <div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light mb-4 md:mb-6 text-foreground tracking-tight">
@@ -73,16 +82,11 @@ const Index = () => {
             </p>
             <p className="text-sm md:text-base text-muted-foreground">Dr. Antony Muchui Manyara, HSC.</p>
           </div>
-          <div className="flex justify-center relative">
+          <div className="flex justify-center">
             <img 
               src={bookCover} 
               alt="The Other Side of Hard - Book Cover" 
               className="rounded-sm shadow-lg max-w-[280px] md:max-w-xs w-full"
-            />
-            <img 
-              src={bestsellerBadge} 
-              alt="Nairobi Bestseller Badge" 
-              className="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-20 h-20 md:w-24 md:h-24 drop-shadow-lg"
             />
           </div>
         </div>
