@@ -82,7 +82,7 @@ const Index = () => {
             <img 
               src={bestsellerBadge} 
               alt="Nairobi Bestseller Badge" 
-              className="absolute -top-4 -right-4 md:-top-6 md:-right-6 w-20 h-20 md:w-24 md:h-24 drop-shadow-lg"
+              className="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-20 h-20 md:w-24 md:h-24 drop-shadow-lg"
             />
           </div>
         </div>
