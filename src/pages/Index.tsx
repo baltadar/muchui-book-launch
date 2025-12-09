@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import bookCover from "@/assets/book-cover.jpg";
 import deluxeBooks from "@/assets/deluxe-books.jpg";
+import bestsellerBadge from "@/assets/nairobi-bestseller-badge.png";
 import nuriaLogo from "@/assets/nuria-logo.jpeg";
 import textbookCenterLogo from "@/assets/textbook-center-logo.jpg";
 import { useState } from "react";
@@ -72,11 +73,16 @@ const Index = () => {
             </p>
             <p className="text-sm md:text-base text-muted-foreground">Dr. Antony Muchui Manyara, HSC.</p>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center relative">
             <img 
               src={bookCover} 
               alt="The Other Side of Hard - Book Cover" 
               className="rounded-sm shadow-lg max-w-[280px] md:max-w-xs w-full"
+            />
+            <img 
+              src={bestsellerBadge} 
+              alt="Nairobi Bestseller Badge" 
+              className="absolute -top-4 -right-4 md:-top-6 md:-right-6 w-20 h-20 md:w-24 md:h-24 drop-shadow-lg"
             />
           </div>
         </div>
