@@ -62,7 +62,7 @@ const Index = () => {
       <Header />
 
       {/* Bestseller Badge */}
-      <div className="container mx-auto px-4 pt-6 flex justify-center">
+      <div className="container mx-auto px-4 pt-6 flex justify-start">
         <img 
           src={bestsellerBadge} 
           alt="Nairobi Bestseller Badge" 
