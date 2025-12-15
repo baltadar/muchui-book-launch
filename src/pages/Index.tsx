@@ -101,7 +101,7 @@ const Index = () => {
             
             <div className="flex justify-center items-center gap-8 md:gap-12">
               <a 
-                href="https://nuriakenya.com" 
+                href="https://nuriakenya.com/product/the-other-side-of-hard/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="transition-transform hover:scale-105"
