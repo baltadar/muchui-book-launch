@@ -113,7 +113,7 @@ const Index = () => {
                 />
               </a>
               <a 
-                href="https://textbookcentre.com" 
+                href="https://textbookcentre.com/shop/the-other-side-of-hardhow-to-build-resilience-and-own-your-story/?srsltid=AfmBOooHMx0TrIgmSF3fmEb0emwBWACdJ2DSjNX1HgnpB-b0Q6r_hRT2" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="transition-transform hover:scale-105"
