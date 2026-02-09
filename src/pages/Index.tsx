@@ -133,9 +133,9 @@ const Index = () => {
                     <Button size="sm" className="text-xs">Order Now</Button>
                   </a>
                 </div>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-base text-muted-foreground">
                   For enquiries, email us at{' '}
-                  <a href="mailto:info@yaafrika.org" className="underline hover:text-foreground transition-colors">info@yaafrika.org</a>
+                  <a href="mailto:info@yaafrika.org" className="underline font-bold hover:text-foreground transition-colors">info@yaafrika.org</a>
                 </p>
               </div>
             </div>
