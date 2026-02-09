@@ -113,22 +113,24 @@ const Index = () => {
                 <p className="text-muted-foreground text-sm md:text-base mb-6">
                   Paperback and Deluxe editions are available at our partner bookstores:
                 </p>
-                <div className="flex justify-center md:justify-start items-center gap-6 mb-6">
+                <div className="flex justify-center md:justify-start items-center gap-8 mb-6">
                   <a 
                     href="https://nuriakenya.com/product/the-other-side-of-hard/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="transition-transform hover:scale-105"
+                    className="flex flex-col items-center gap-2 transition-transform hover:scale-105"
                   >
                     <img src={nuriaLogo} alt="Nuria Kenya" className="h-14 md:h-16 w-auto object-contain" />
+                    <Button size="sm" className="text-xs">Order Now</Button>
                   </a>
                   <a 
                     href="https://textbookcentre.com/shop/the-other-side-of-hard/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="transition-transform hover:scale-105"
+                    className="flex flex-col items-center gap-2 transition-transform hover:scale-105"
                   >
                     <img src={textbookCenterLogo} alt="Text Book Centre" className="h-14 md:h-16 w-auto object-contain" />
+                    <Button size="sm" className="text-xs">Order Now</Button>
                   </a>
                 </div>
                 <p className="text-sm text-muted-foreground">
