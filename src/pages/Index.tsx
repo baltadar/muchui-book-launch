@@ -134,10 +134,8 @@ const Index = () => {
                   </a>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  For bookstore enquiries or any questions, email us at{' '}
+                  For enquiries, email us at{' '}
                   <a href="mailto:info@yaafrika.org" className="underline hover:text-foreground transition-colors">info@yaafrika.org</a>
-                  {' '}&{' '}
-                  <a href="mailto:antony@yaafrika.org" className="underline hover:text-foreground transition-colors">antony@yaafrika.org</a>
                 </p>
               </div>
             </div>
