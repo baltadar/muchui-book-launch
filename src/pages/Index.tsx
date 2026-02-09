@@ -129,66 +129,48 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pre-order Physical Copies Section */}
-      <section id="pre-order" className="border-t border-border py-12 md:py-16 bg-muted/20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-xl md:text-2xl font-playfair font-semibold mb-3 italic text-primary">Order the Paperback Edition Now</h2>
-              <p className="text-muted-foreground text-sm md:text-base">
-                Secure your physical copy today
-              </p>
-            </div>
-
-            <div className="bg-background border border-border rounded-lg p-6 md:p-8 shadow-sm text-center">
-              <div className="text-2xl font-light mb-2">KES 2,500</div>
-              <p className="text-muted-foreground mb-4">Click below to order your copy</p>
-              <div className="flex justify-center">
-                <Button 
-                  size="lg"
-                  onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScolHl5ia46wU67RU_-o7ytcat_fX0R_im9UOd2q6OzOBzg_g/viewform', '_blank')}
-                >
-                  Order Now
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Deluxe Edition Section */}
-      <section className="border-t border-border py-12 md:py-16 bg-muted/30">
+      {/* Physical Copies Section */}
+      <section className="border-t border-border py-12 md:py-16 bg-muted/20">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-xl md:text-2xl font-playfair font-semibold mb-3 italic text-primary">Order the Deluxe Edition</h2>
-              <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
-                This collector's edition features a pre-signed copy by the author, embossed hardcover binding with gold foiling, premium paper, larger trim size, and is individually numbered.
-              </p>
-            </div>
-
             <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="flex justify-center order-2 md:order-1">
+              <div className="flex justify-center">
                 <img 
                   src={deluxeBooks} 
-                  alt="The Other Side of Hard - Deluxe Edition" 
+                  alt="The Other Side of Hard - Physical Editions" 
                   className="rounded-lg shadow-lg w-full max-w-md"
                 />
               </div>
 
-              <div className="order-1 md:order-2">
-                <div className="bg-background border border-border rounded-lg p-6 md:p-8 shadow-sm text-center">
-                  <div className="text-2xl font-light mb-2">KES 5,000</div>
-                  <p className="text-muted-foreground mb-4">Click below to order the Deluxe Edition</p>
-                  <div className="flex justify-center">
-                    <Button 
-                      size="lg"
-                      onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdTDiKqU2qrgqyCpKryYbOpJIjbvZtUTXNlM-41qPGV71UF2g/viewform', '_blank')}
-                    >
-                      Order Deluxe
-                    </Button>
-                  </div>
+              <div className="text-center md:text-left">
+                <h2 className="text-xl md:text-2xl font-playfair font-semibold mb-3 italic text-primary">Get Your Physical Copy</h2>
+                <p className="text-muted-foreground text-sm md:text-base mb-6">
+                  Paperback and Deluxe editions are available at our partner bookstores:
+                </p>
+                <div className="flex justify-center md:justify-start items-center gap-6 mb-6">
+                  <a 
+                    href="https://nuriakenya.com/product/the-other-side-of-hard/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="transition-transform hover:scale-105"
+                  >
+                    <img src={nuriaLogo} alt="Nuria Kenya" className="h-14 md:h-16 w-auto object-contain" />
+                  </a>
+                  <a 
+                    href="https://textbookcentre.com/shop/the-other-side-of-hardhow-to-build-resilience-and-own-your-story/?srsltid=AfmBOooHMx0TrIgmSF3fmEb0emwBWACdJ2DSjNX1HgnpB-b0Q6r_hRT2" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="transition-transform hover:scale-105"
+                  >
+                    <img src={textbookCenterLogo} alt="Text Book Centre" className="h-14 md:h-16 w-auto object-contain" />
+                  </a>
                 </div>
+                <p className="text-sm text-muted-foreground">
+                  For bookstore enquiries or any questions, email us at{' '}
+                  <a href="mailto:info@yaafrika.org" className="underline hover:text-foreground transition-colors">info@yaafrika.org</a>
+                  {' '}&{' '}
+                  <a href="mailto:antony@yaafrika.org" className="underline hover:text-foreground transition-colors">antony@yaafrika.org</a>
+                </p>
               </div>
             </div>
           </div>
