@@ -92,42 +92,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Available at Bookstores Section */}
-      <section className="border-t border-border py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-3">Now Available in Bookshops</h2>
-            <p className="text-muted-foreground mb-8 text-base md:text-lg">Get your copy at your favourite bookstores</p>
-            
-            <div className="flex justify-center items-center gap-8 md:gap-12">
-              <a 
-                href="https://nuriakenya.com/product/the-other-side-of-hard/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-transform hover:scale-105"
-              >
-                <img 
-                  src={nuriaLogo} 
-                  alt="Nuria Kenya" 
-                  className="h-16 md:h-20 w-auto object-contain"
-                />
-              </a>
-              <a 
-                href="https://textbookcentre.com/shop/the-other-side-of-hardhow-to-build-resilience-and-own-your-story/?srsltid=AfmBOooHMx0TrIgmSF3fmEb0emwBWACdJ2DSjNX1HgnpB-b0Q6r_hRT2" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-transform hover:scale-105"
-              >
-                <img 
-                  src={textbookCenterLogo} 
-                  alt="Text Book Centre" 
-                  className="h-16 md:h-20 w-auto object-contain"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+
+
 
       {/* Physical Copies Section */}
       <section className="border-t border-border py-12 md:py-16 bg-muted/20">
@@ -157,7 +123,7 @@ const Index = () => {
                     <img src={nuriaLogo} alt="Nuria Kenya" className="h-14 md:h-16 w-auto object-contain" />
                   </a>
                   <a 
-                    href="https://textbookcentre.com/shop/the-other-side-of-hardhow-to-build-resilience-and-own-your-story/?srsltid=AfmBOooHMx0TrIgmSF3fmEb0emwBWACdJ2DSjNX1HgnpB-b0Q6r_hRT2" 
+                    href="https://textbookcentre.com/shop/the-other-side-of-hard/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="transition-transform hover:scale-105"
