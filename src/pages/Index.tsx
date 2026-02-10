@@ -40,7 +40,7 @@ const Index = () => {
       title: "Mpesa Paybill",
       details: [
         { label: "Paybill", value: "222111" },
-        { label: "Account", value: "035000063447" },
+        { label: "Account", value: "63447" },
       ]
     }
   ];
